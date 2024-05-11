@@ -1,0 +1,5 @@
+.env.*
+node_modules
+Reference
+.vscode
+db/seeds/data/StationsRefData_v1.2.xml
