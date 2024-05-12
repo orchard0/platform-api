@@ -5,7 +5,7 @@ const {
 
 const apiRouter = require('express').Router();
 
-apiRouter.route('/stationSearch/:term').get(searchStationByTerm);
-apiRouter.route('/stationSearch/crs/:crs').get(searchStationByCRS);
+apiRouter.route('/stations/:term').get(searchStationByTerm);
+apiRouter.route('/stations/crs/:crs').get(searchStationByCRS);
 
 module.exports = apiRouter;
