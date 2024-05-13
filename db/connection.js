@@ -11,16 +11,11 @@ if (!process.env.PGDATABASE && !process.env.POSTGRES_URL) {
 	console.log();
 }
 
-const config = {
-	ssl: {
-		rejectUnauthorized: false,
-		sslmode: 'require',
-		// requestCert: true,
-	},
-};
+const config = {};
 
 if (ENV === 'production') {
 	config.connectionString = process.env.POSTGRES_URL;
+	config.ssl = { rejectUnauthorized: false };
 }
 
 module.exports = new Pool(config);
