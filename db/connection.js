@@ -8,10 +8,16 @@ require('dotenv').config({
 if (!process.env.PGDATABASE && !process.env.POSTGRES_URL) {
 	throw new Error('PGDATABASE or POSTGRES_URL not set');
 } else {
-	console.log()
+	console.log();
 }
 
-const config = {};
+const config = {
+	ssl: {
+		rejectUnauthorized: false,
+		sslmode: 'require',
+		// requestCert: true,
+	},
+};
 
 if (ENV === 'production') {
 	config.connectionString = process.env.POSTGRES_URL;
