@@ -1,7 +1,6 @@
+const { DateTime } = require('luxon');
 exports.genDatetime = () => {
-	return new Date()
-		.toLocaleString('sv')
-		.replace(' ', 'T')
-		.replaceAll(':', '')
-		.replaceAll('-', '');
+	return DateTime.now()
+		.setZone('Europe/London')
+		.toFormat("yyyyMMdd'T'HHmmss");
 };
