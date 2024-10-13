@@ -15,8 +15,8 @@ exports.serviceData = async (req, res, next) => {
 	const fastestDataP = processFastestNextData(fastestData);
 	const nextDataP = processFastestNextData(nextData);
 
+	const checkKeys = ['locationName', 'destination', 'via', 'std'];
 	const services = departuresDataP.map((item) => {
-		const checkKeys = ['locationName', 'destination', 'via', 'std'];
 		const type = [];
 
 		if (
