@@ -11,7 +11,14 @@ exports.serviceData = async (req, res, next) => {
 
 	const { nrccMessages, services: departuresDataP } =
 		processDepartureData(departuresData);
-	if (!departuresDataP) return { from, to, services: [] };
+
+	if (!departuresDataP)
+		return res.status(404).send({
+			from,
+			to,
+			services: [],
+		});
+
 	const fastestDataP = processFastestNextData(fastestData);
 	const nextDataP = processFastestNextData(nextData);
 
