@@ -8,7 +8,7 @@ If you prefer Bun runtime and Elysia framework checkout [this repo](https://gith
 
 1. Run `npm i`
 
-2. Create a `.env` file in the root directory with the following key and values:
+2. Create a `.env.local` file in the root directory with the following key and values:
 
 ```
 api_key_fastest =
